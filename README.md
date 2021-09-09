@@ -1,4 +1,4 @@
-#nvim
+# nvim
 
 Neovim 0.5.0
 
