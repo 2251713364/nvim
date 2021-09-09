@@ -1,0 +1,5 @@
+tmp/
+*.swp
+plugged/
+node_modules/
+_machine_specific.vim
