@@ -3,7 +3,7 @@
 Neovim 0.5.0
 
 sudo pacman -S nodejs
-
+**htop** 
 pip install pynvim
 
 npm install -g neovim
