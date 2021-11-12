@@ -170,8 +170,6 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 " vimwiki
 set nocompatible
 filetype plugin on
-
-
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
@@ -182,7 +180,7 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 " ===
 
 " Open a new instance of st with the cwd
-nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q!<CR>
+nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q!<CR>
 
 " Opening a terminal window
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
@@ -193,6 +191,8 @@ noremap <LEADER><LEADER> <Esc>/<CR>:nohlsearch<CR>c4l
 " Spelling Check with <space>sc
 noremap <LEADER>sc :set spell!<CR>
 
+
+" put center
 noremap <C-c> zz
 
 " Auto change directory to current dir
@@ -200,14 +200,14 @@ autocmd BufEnter * silent! lcd %:p:h
 
 " Call figlet
 noremap tx :r !figlet 
-
+                
 " find and replace
 noremap \s :%s//g<left><left>
 
 " set wrap
 noremap <LEADER>sw :set wrap<CR>
 
-" press f10 to show hlgroup
+" press f10 to show hlwwp
 function! SynGroup()
 	let l:s = synID(line('.'), col('.'), 1)
 	echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
@@ -277,7 +277,7 @@ Plug 'nvim-treesitter/playground'
 " Pretty Dress
 Plug 'theniceboy/nvim-deus'
 "Plug 'arzg/vim-colors-xcode'
-
+"Plug 'rakr/vim-one'
 " Status line
 Plug 'theniceboy/eleline.vim'
 Plug 'ojroques/vim-scrollstatus'
@@ -657,7 +657,7 @@ let g:table_mode_cell_text_object_i_map = 'k<Bar>'
 " ===
 set rtp+=/usr/bin/fzf
 nnoremap <c-p> :Leaderf file<CR>
-" noremap <silent> <C-p> :Files<CR>
+noremap <silent> <C-p> :Files<CR>
 noremap <silent> <C-f> :Rg<CR>
 noremap <silent> <C-h> :History<CR>
 "noremap <C-t> :BTags<CR>
