@@ -44,7 +44,7 @@ coc-settings.json在coc自动补全中用到的language-server需要安装
 pacman -S ccls,pacman -S bash-language-server
 
 
-## useful tools
+## using tools
 ### Markdown
 #### vim-instant-markdown
 
