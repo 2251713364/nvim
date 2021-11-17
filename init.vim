@@ -171,7 +171,7 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 set nocompatible
 filetype plugin on
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+			\ 'syntax': 'markdown', 'ext': '.md'}]
 
 
 
@@ -180,7 +180,7 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 " ===
 
 " Open a new instance of st with the cwd
-nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'alacritty'<CR><C-\><C-N>:q!<CR>
+nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q!<CR>
 
 " Opening a terminal window
 noremap <LEADER>/ :set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>
@@ -656,12 +656,13 @@ let g:table_mode_cell_text_object_i_map = 'k<Bar>'
 " === FZF
 " ===
 set rtp+=/usr/bin/fzf
+
 nnoremap <c-p> :Leaderf file<CR>
-noremap <silent> <C-p> :Files<CR>
+"noremap <silent> <C-p> :Files<CR>
 noremap <silent> <C-f> :Rg<CR>
 noremap <silent> <C-h> :History<CR>
-"noremap <C-t> :BTags<CR>
-" noremap <silent> <C-l> :Lines<CR>
+noremap <C-t> :BTags<CR>
+"noremap <silent> <C-l> :Lines<CR>
 noremap <silent> <C-w> :Buffers<CR>
 noremap <leader>; :History:<CR>
 

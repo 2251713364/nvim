@@ -1,5 +1,9 @@
 tmp/
+.netrwhist
 *.swp
 plugged/
 node_modules/
 _machine_specific.vim
+autoload/plug.vim.old
+view/
+sessions/
