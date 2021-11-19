@@ -148,7 +148,7 @@ detail as [coc-snippets](https://github.com/neoclide/coc-snippets)
 " coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
 vmap <C-e> <Plug>(coc-snippets-select)
-let g:coc_snippet_next = '<c-e>'
+let g:coc_snippet_next = '<c-e>'  在代码小片段中需要编辑的部分跳转
 let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
 let g:snips_author = 'theniceboy'
@@ -156,40 +156,45 @@ autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
 ```
 
+### vim-snippets
+
+[vim-snippets](https://github.com/theniceboy/vim-snippets) 
+
+### tcomment_vim
+
+<leader>cn 注释
+
+<leader>cu 取消注释
+ 
+可视模式下多行注释同样的操作
 
 
+### vim-surround
 
+[surround](https://github.com/tpope/vim-surround) 
+[surroundrecord](https://gist.github.com/wilon/ac1fc66f4a79e7b0c161c80877c75c94) 
+ds "   删除""括号
+cs "{  替换""为{}
 
-### Ultisnips
-
-
-
-### nerd-commmentator
-
-批注/反批注
-
-### vimf-surround
-
-修改包裹符号
 
 ### switch
 快捷修改true,false
 
-### tabgularize
+### tabular
 
-规整代码(等号)
+vmap ga :Tabularize /
 
-### simgplyfold
-把代码收起来
+使选中代码按照某一符号对齐
 
-#tag bar
-shift+T:列出代码函数和变量
+### vista.vim
 
-### vim-signature
-为代码添加书签
+<leader>v 列出变量和函数
 
-#undotree
-当前文件的编辑历史
+<C-t> 查找函数和变量
+
+### undotree
+
+L 打开编辑历史记录
 
 ### fzf 
 trl p :查找文件 
