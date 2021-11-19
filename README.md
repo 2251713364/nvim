@@ -65,15 +65,15 @@ leader ww
 ### coc
 `set hidden` 　
 
-缓冲区未保存可以跳到其他地方
++ 缓冲区未保存可以跳到其他地方
 
 `set updatetime = 100` 
 
-响应时间更快
++ 响应时间更快
 
 `set shortmess+=c` 
 
-省略自动补全是匹配的第几个信息
++ 省略自动补全是匹配的第几个信息
 ```
 inoremap <silent><expr> <TAB>
 
@@ -87,17 +87,17 @@ function! s:check_back_space() abort
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 ```
-使得TAB键弹出补全
++ 使得TAB键弹出补全
 
 `inoremap <silent><expr> <c-o> coc#refresh()`
 
-使用ctrl+o 没有前面的内容就弹出补全提示
++ 使用ctrl+o 没有前面的内容就弹出补全提示
 
 ```
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 ```
-使用TAB选中补全后，回车不换行
++ 使用TAB选中补全后，回车不换行
 ```
 function! Show_documentation()
 	call CocActionAsync('highlight')
@@ -110,16 +110,16 @@ endfunction
 
 nnoremap <LEADER>h :call Show_documentation()<CR>
 ```
-leader+h 调出帮助文档
++ leader+h 调出帮助文档
 ```
 nmap <silent> <leader>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>= <Plug>(coc-diagnostic-next)	
 ```
-使用leader+-或=跳转到上个或下个报错的地方
++ 使用leader+-或=跳转到上个或下个报错的地方
 
 `nnoremap <silent><nowait> <LEADER>d :CocList diagnostics<cr> `
 
-使用leader+d列出所有报错
++ 使用leader+d列出所有报错
 
 ```
 nmap <silent> gd <Plug>(coc-definition) 查看函数定义
@@ -135,10 +135,33 @@ nmap <leader>rn <Plug>(coc-rename)  leader+rn函数内变量统一改名
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
-nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr> 
-
-space+y打开剪切板历史
+nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>  space+y打开剪切板历史
 ```
+
+
+#### coc-snippets 
+snippets preview requires neovim 0.4 or latest vim8
+
+detail as [coc-snippets](https://github.com/neoclide/coc-snippets)
+
+```
+" coc-snippets
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-e> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-e>'
+let g:coc_snippet_prev = '<c-n>'
+imap <C-e> <Plug>(coc-snippets-expand-jump)
+let g:snips_author = 'theniceboy'
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
+```
+
+
+
+
+
+### Ultisnips
+
 
 
 ### nerd-commmentator

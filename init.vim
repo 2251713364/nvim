@@ -167,11 +167,12 @@ noremap tmi :+tabmove<CR>
 source ~/.config/nvim/md-snippets.vim
 " auto spell
 autocmd BufRead,BufNewFile *.md setlocal spell
+
 " vimwiki
-set nocompatible
-filetype plugin on
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-			\ 'syntax': 'markdown', 'ext': '.md'}]
+"set nocompatible
+"filetype plugin on
+"let g:vimwiki_list = [{'path': '~/vimwiki/',
+"			\ 'syntax': 'markdown', 'ext': '.md'}]
 
 
 
@@ -240,7 +241,7 @@ func! CompileRunGcc()
 		:term python3 %
 	elseif &filetype == 'html'
 		silent! exec "!".g:mkdp_browser." % &"
-	elseif &filetype == 'vimwiki'
+	elseif &filetype == 'markdown'
 		exec "InstantMarkdownPreview"
 	elseif &filetype == 'tex'
 		silent! exec "VimtexStop"
@@ -381,7 +382,8 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug'] }
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug'] }
 Plug 'dkarter/bullets.vim'
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
+
 
 
  
@@ -629,7 +631,7 @@ vmap <C-e> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-e>'
 let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
-let g:snips_author = 'David Chen'
+let g:snips_author = 'theniceboy'
 autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
 
